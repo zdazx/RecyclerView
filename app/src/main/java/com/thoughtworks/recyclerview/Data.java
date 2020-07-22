@@ -8,11 +8,13 @@ public class Data {
     public String title;
     public String description;
     public int number;
+    public String avatar;
 
-    public Data(int type, String title, String description, int number) {
+    public Data(int type, String title, String description, int number, String avatar) {
         this.type = type;
         this.title = title;
         this.description = description;
         this.number = number;
+        this.avatar = avatar;
     }
 }

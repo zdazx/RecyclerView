@@ -3,30 +3,37 @@ package com.thoughtworks.recyclerview;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class MultiViewTypeAdapter extends RecyclerView.Adapter {
     private ArrayList<Data> dataSet;
+    private ListActivity activity;
 
-    public MultiViewTypeAdapter(ArrayList<Data> dataSet) {
+    public MultiViewTypeAdapter(ArrayList<Data> dataSet, ListActivity activity) {
         this.dataSet = dataSet;
+        this.activity = activity;
     }
 
     public static class MyItemViewHolder extends RecyclerView.ViewHolder {
         public TextView titleView;
         public TextView numberView;
         public TextView descView;
+        public ImageView imageView;
 
         public MyItemViewHolder(@NonNull View itemView) {
             super(itemView);
             titleView = itemView.findViewById(R.id.title);
             numberView = itemView.findViewById(R.id.number);
             descView = itemView.findViewById(R.id.desc);
+            imageView = itemView.findViewById(R.id.icon);
         }
     }
 
@@ -81,6 +88,9 @@ public class MultiViewTypeAdapter extends RecyclerView.Adapter {
                     ((MyItemViewHolder) holder).titleView.setText(data.title);
                     ((MyItemViewHolder) holder).descView.setText(data.description);
                     ((MyItemViewHolder) holder).numberView.setText(String.valueOf(data.number));
+                    Glide.with(activity)
+                            .load(data.avatar)
+                            .into(((MyItemViewHolder) holder).imageView);
             }
         }
     }

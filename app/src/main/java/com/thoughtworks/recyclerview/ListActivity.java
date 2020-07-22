@@ -21,7 +21,7 @@ public class ListActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recycle_view_container);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
-        MultiViewTypeAdapter multiViewTypeAdapter = new MultiViewTypeAdapter(getDataSet());
+        MultiViewTypeAdapter multiViewTypeAdapter = new MultiViewTypeAdapter(getDataSet(), this);
 
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(multiViewTypeAdapter);
@@ -29,22 +29,22 @@ public class ListActivity extends AppCompatActivity {
 
     private ArrayList<Data> getDataSet() {
         ArrayList<Data> data = new ArrayList<>();
-        data.add(new Data(TYPE_HEADER, "This is the header", null, 0));
-        data.add(new Data(TYPE_ITEM, "title1", "desp1", 1));
-        data.add(new Data(TYPE_ITEM, "title2", "desp2", 2));
-        data.add(new Data(TYPE_ITEM, "title3", "desp3", 3));
-        data.add(new Data(TYPE_ITEM, "title4", "desp4", 4));
-        data.add(new Data(TYPE_ITEM, "title5", "desp5", 5));
-        data.add(new Data(TYPE_ITEM, "title6", "desp6", 6));
-        data.add(new Data(TYPE_ITEM, "title7", "desp7", 7));
-        data.add(new Data(TYPE_ITEM, "title8", "desp8", 8));
-        data.add(new Data(TYPE_ITEM, "title9", "desp9", 9));
-        data.add(new Data(TYPE_ITEM, "title10", "desp10", 10));
-        data.add(new Data(TYPE_ITEM, "title11", "desp11", 11));
-        data.add(new Data(TYPE_ITEM, "title12", "desp12", 12));
-        data.add(new Data(TYPE_ITEM, "title13", "desp13", 13));
-        data.add(new Data(TYPE_ITEM, "title14", "desp14", 14));
-        data.add(new Data(TYPE_ITEM, "title15", "desp15", 15));
+        data.add(new Data(TYPE_HEADER, "This is the header", null, 0, null));
+        data.add(new Data(TYPE_ITEM, "title1", "desp1", 1, "https://loremflickr.com/180/180?lock=1"));
+        data.add(new Data(TYPE_ITEM, "title2", "desp2", 2, "https://loremflickr.com/180/180?lock=2"));
+        data.add(new Data(TYPE_ITEM, "title3", "desp3", 3, "https://loremflickr.com/180/180?lock=1"));
+        data.add(new Data(TYPE_ITEM, "title4", "desp4", 4, "https://loremflickr.com/180/180?lock=2"));
+        data.add(new Data(TYPE_ITEM, "title5", "desp5", 5, "https://loremflickr.com/180/180?lock=1"));
+        data.add(new Data(TYPE_ITEM, "title6", "desp6", 6, "https://loremflickr.com/180/180?lock=2"));
+        data.add(new Data(TYPE_ITEM, "title7", "desp7", 7, "https://loremflickr.com/180/180?lock=1"));
+        data.add(new Data(TYPE_ITEM, "title8", "desp8", 8, "https://loremflickr.com/180/180?lock=2"));
+        data.add(new Data(TYPE_ITEM, "title9", "desp9", 9, "https://loremflickr.com/180/180?lock=1"));
+        data.add(new Data(TYPE_ITEM, "title10", "desp10", 10, "https://loremflickr.com/180/180?lock=2"));
+        data.add(new Data(TYPE_ITEM, "title11", "desp11", 11, "https://loremflickr.com/180/180?lock=1"));
+        data.add(new Data(TYPE_ITEM, "title12", "desp12", 12, "https://loremflickr.com/180/180?lock=2"));
+        data.add(new Data(TYPE_ITEM, "title13", "desp13", 13, "https://loremflickr.com/180/180?lock=1"));
+        data.add(new Data(TYPE_ITEM, "title14", "desp14", 14, "https://loremflickr.com/180/180?lock=2"));
+        data.add(new Data(TYPE_ITEM, "title15", "desp15", 15, "https://loremflickr.com/180/180?lock=1"));
         return data;
     }
 }
